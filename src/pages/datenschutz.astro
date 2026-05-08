@@ -1,0 +1,69 @@
+---
+import VariantB from "../layouts/VariantB.astro";
+---
+<VariantB title="Datenschutz — GardenGeoDome">
+	<header class="page-header">
+		<div class="kicker">Datenschutz</div>
+		<h1>Datenschutz<strong>erklärung.</strong></h1>
+		<p class="lede">Diese Website ist eine statische Seite ohne Tracking, ohne Cookies, ohne Analytics. Hier eine Übersicht, welche Daten wann erhoben werden.</p>
+	</header>
+
+	<section class="ds-body">
+		<div class="ds-block">
+			<h2>1 — Verantwortliche Stelle</h2>
+			<p>Jorinde Dehmel<br />Vaubanallee 22 · 79100 Freiburg i.Br.<br /><a href="mailto:info@gardengeodome.com">info@gardengeodome.com</a></p>
+		</div>
+
+		<div class="ds-block">
+			<h2>2 — Erhebung beim Aufruf der Website</h2>
+			<p>Beim Besuch dieser Website werden technisch notwendige Daten an den Hosting-Anbieter (GitHub Pages) übermittelt: IP-Adresse, Datum und Uhrzeit, aufgerufene Seite, Browser-Information. Diese Daten werden in Server-Logfiles vom Anbieter verarbeitet und nicht von uns gespeichert oder ausgewertet.</p>
+		</div>
+
+		<div class="ds-block">
+			<h2>3 — Cookies & Tracking</h2>
+			<p>Diese Website verwendet <strong>keine Cookies</strong>, kein Analytics-Tool, kein Re-Targeting, keine Social-Media-Plugins. Es werden keinerlei Tracking-Daten erhoben.</p>
+		</div>
+
+		<div class="ds-block">
+			<h2>4 — Kontaktaufnahme</h2>
+			<p>Wenn du das Kontaktformular nutzt, öffnet sich dein E-Mail-Programm — die Nachricht geht direkt an info@gardengeodome.com. Es findet keine Zwischenspeicherung auf einem Server statt. Deine Angaben werden ausschließlich zur Bearbeitung deiner Anfrage verwendet und nicht weitergegeben.</p>
+		</div>
+
+		<div class="ds-block">
+			<h2>5 — Externe Schriften</h2>
+			<p>Diese Website nutzt Schriften von Google Fonts. Beim Aufruf der Seite werden Schriftdateien von Google-Servern geladen. Dabei wird deine IP-Adresse an Google übermittelt. Mehr dazu in den <a href="https://policies.google.com/privacy" target="_blank" rel="noopener">Google-Datenschutzbestimmungen</a>.</p>
+		</div>
+
+		<div class="ds-block">
+			<h2>6 — Deine Rechte</h2>
+			<p>Du hast das Recht auf Auskunft, Berichtigung, Löschung, Einschränkung der Verarbeitung, Datenübertragbarkeit und Widerspruch. Schreib uns einfach an die oben genannte E-Mail-Adresse.</p>
+		</div>
+
+		<div class="ds-block">
+			<h2>7 — Beschwerde</h2>
+			<p>Du hast das Recht, dich bei einer Datenschutz-Aufsichtsbehörde zu beschweren — z.B. beim Landesbeauftragten für Datenschutz und Informationsfreiheit Baden-Württemberg.</p>
+		</div>
+
+		<p class="ds-meta">Stand: Mai 2026. Diese Erklärung ist ein Entwurf und sollte vor Veröffentlichung von einer Anwältin / einem Anwalt geprüft werden.</p>
+	</section>
+
+	<style>
+		.ds-body {
+			padding: 3rem 3rem 6rem;
+			max-width: 820px;
+			border-top: 1px solid var(--line);
+			display: flex; flex-direction: column; gap: 2rem;
+		}
+		.ds-block h2 {
+			font-size: 0.78rem; letter-spacing: 0.22em; text-transform: uppercase;
+			color: var(--green-deep); font-weight: 700; margin-bottom: 0.7rem;
+		}
+		.ds-block p { font-size: 1.02rem; line-height: 1.65; margin-bottom: 0.75rem; max-width: 38em; }
+		.ds-block a { color: var(--green-deep); border-bottom: 1px solid currentColor; padding-bottom: 1px; }
+		.ds-meta {
+			margin-top: 2rem; padding-top: 1.5rem; border-top: 1px solid rgba(26,26,26,0.15);
+			font-size: 0.85rem; color: var(--muted); font-style: italic;
+		}
+		@media (max-width: 760px) { .ds-body { padding: 2rem 1.5rem; } }
+	</style>
+</VariantB>

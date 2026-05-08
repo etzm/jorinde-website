@@ -1,0 +1,96 @@
+---
+import VariantB from "../layouts/VariantB.astro";
+---
+<VariantB title="Kontakt — GardenGeoDome" activeNav="kontakt">
+	<header class="page-header">
+		<div class="kicker">Kontakt</div>
+		<h1>Workshop <strong>anfragen.</strong></h1>
+		<p class="lede">Erzähl mir, was du im Sinn hast — Ort, Gruppe, Anlass. Ich melde mich zurück und wir finden einen Termin.</p>
+	</header>
+
+	<section class="kt-grid">
+		<form class="kt-form" action="mailto:info@gardengeodome.com" method="post" enctype="text/plain">
+			<div class="kt-row">
+				<label for="name">Name</label>
+				<input id="name" name="name" type="text" required autocomplete="name" />
+			</div>
+			<div class="kt-row">
+				<label for="email">E-Mail</label>
+				<input id="email" name="email" type="email" required autocomplete="email" />
+			</div>
+			<div class="kt-row">
+				<label for="kontext">Anlass / Ort / Gruppengröße</label>
+				<input id="kontext" name="kontext" type="text" placeholder="z.B. Garten in Freiburg · 8 Personen · Sommerfest" />
+			</div>
+			<div class="kt-row">
+				<label for="msg">Nachricht</label>
+				<textarea id="msg" name="msg" rows="6" required placeholder="Was schwebt dir vor?"></textarea>
+			</div>
+			<div class="kt-actions">
+				<button type="submit" class="btn primary">Anfrage senden</button>
+				<p class="kt-hint">Öffnet dein E-Mail-Programm. Du kannst auch direkt schreiben an <a href="mailto:info@gardengeodome.com">info@gardengeodome.com</a>.</p>
+			</div>
+		</form>
+
+		<aside class="kt-side">
+			<div class="kt-card">
+				<div class="kt-card-label">Direkt</div>
+				<p><strong>Jorinde Dehmel</strong></p>
+				<p>Vaubanallee 22<br />79100 Freiburg i.Br.<br />Germany</p>
+				<p style="margin-top:1rem;"><a href="mailto:info@gardengeodome.com">info@gardengeodome.com</a></p>
+			</div>
+			<div class="kt-card">
+				<div class="kt-card-label">Antwortzeit</div>
+				<p>In der Regel innerhalb weniger Tage. Für konkrete Workshop-Termine plane bitte 4–6 Wochen Vorlauf ein.</p>
+			</div>
+		</aside>
+	</section>
+
+	<style>
+		.kt-grid {
+			padding: 3rem 3rem 6rem;
+			display: grid; grid-template-columns: 1.4fr 1fr; gap: 4rem;
+			border-top: 1px solid var(--line);
+		}
+		.kt-form { display: flex; flex-direction: column; gap: 1.5rem; max-width: 38em; }
+		.kt-row { display: flex; flex-direction: column; gap: 0.4rem; }
+		.kt-row label {
+			font-size: 0.75rem; letter-spacing: 0.18em; text-transform: uppercase;
+			color: var(--green-deep); font-weight: 700;
+		}
+		.kt-row input, .kt-row textarea {
+			font: inherit; font-size: 1rem;
+			background: transparent;
+			border: none; border-bottom: 1px solid var(--line);
+			padding: 0.6rem 0;
+			color: var(--ink);
+			outline: none;
+			transition: border-color 150ms;
+			resize: vertical;
+		}
+		.kt-row input:focus, .kt-row textarea:focus { border-bottom-color: var(--green-deep); }
+		.kt-row textarea {
+			border: 1px solid var(--line);
+			padding: 0.75rem 0.85rem;
+			min-height: 8rem;
+			background: var(--surface);
+		}
+		.kt-actions { display: flex; flex-direction: column; gap: 1rem; align-items: flex-start; margin-top: 0.5rem; }
+		.kt-actions button { font-family: inherit; }
+		.kt-hint { font-size: 0.85rem; color: var(--muted); max-width: 28em; }
+		.kt-hint a { color: var(--green-deep); border-bottom: 1px solid currentColor; }
+
+		.kt-side { display: flex; flex-direction: column; gap: 1.5rem; }
+		.kt-card { background: var(--surface); border: 1px solid var(--line); padding: 2rem; }
+		.kt-card-label {
+			font-size: 0.7rem; letter-spacing: 0.22em; text-transform: uppercase;
+			color: var(--green-deep); font-weight: 700; margin-bottom: 1rem;
+		}
+		.kt-card p { font-size: 0.95rem; line-height: 1.55; margin-bottom: 0.5rem; }
+		.kt-card a { color: var(--green-deep); border-bottom: 1px solid currentColor; }
+
+		@media (max-width: 900px) {
+			.kt-grid { grid-template-columns: 1fr; padding: 2.5rem 1.5rem; gap: 2rem; }
+		}
+	</style>
+</VariantB>

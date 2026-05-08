@@ -1,0 +1,53 @@
+---
+import VariantB from "../layouts/VariantB.astro";
+---
+<VariantB title="Impressum — GardenGeoDome">
+	<header class="page-header">
+		<div class="kicker">Impressum</div>
+		<h1>Angaben gemäß <strong>§ 5 TMG.</strong></h1>
+	</header>
+
+	<section class="imp-body">
+		<div class="imp-block">
+			<h2>Diensteanbieter</h2>
+			<p>Jorinde Dehmel<br />Vaubanallee 22<br />79100 Freiburg i.Br.<br />Germany</p>
+		</div>
+
+		<div class="imp-block">
+			<h2>Kontakt</h2>
+			<p>E-Mail: <a href="mailto:info@gardengeodome.com">info@gardengeodome.com</a></p>
+		</div>
+
+		<div class="imp-block">
+			<h2>Verantwortlich für den Inhalt</h2>
+			<p>Jorinde Dehmel · Vaubanallee 22 · 79100 Freiburg i.Br.</p>
+		</div>
+
+		<div class="imp-block">
+			<h2>Haftungsausschluss</h2>
+			<p>Die Inhalte dieser Website wurden mit größtmöglicher Sorgfalt erstellt. Für die Richtigkeit, Vollständigkeit und Aktualität der Inhalte kann jedoch keine Gewähr übernommen werden.</p>
+			<p>Bilder zeigen Workshop-Situationen und gebaute Geodome aus Projekten der vergangenen Jahre.</p>
+		</div>
+
+		<div class="imp-block">
+			<h2>Urheberrecht</h2>
+			<p>Die durch die Seitenbetreiberin erstellten Inhalte und Werke auf diesen Seiten unterliegen dem deutschen Urheberrecht. Vervielfältigung, Bearbeitung, Verbreitung und jede Art der Verwertung außerhalb der Grenzen des Urheberrechtes bedürfen der schriftlichen Zustimmung der jeweiligen Autorin.</p>
+		</div>
+	</section>
+
+	<style>
+		.imp-body {
+			padding: 3rem 3rem 6rem;
+			max-width: 800px;
+			border-top: 1px solid var(--line);
+			display: flex; flex-direction: column; gap: 2.5rem;
+		}
+		.imp-block h2 {
+			font-size: 0.78rem; letter-spacing: 0.22em; text-transform: uppercase;
+			color: var(--green-deep); font-weight: 700; margin-bottom: 0.85rem;
+		}
+		.imp-block p { font-size: 1.02rem; line-height: 1.65; margin-bottom: 0.75rem; max-width: 36em; }
+		.imp-block a { color: var(--green-deep); border-bottom: 1px solid currentColor; padding-bottom: 1px; }
+		@media (max-width: 760px) { .imp-body { padding: 2rem 1.5rem; } }
+	</style>
+</VariantB>

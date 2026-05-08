@@ -1,0 +1,95 @@
+---
+import VariantB from "../layouts/VariantB.astro";
+const root = import.meta.env.BASE_URL.replace(/\/$/, "");
+---
+<VariantB title="Konstruktion erleben — Workshop · GardenGeoDome" activeNav="workshops">
+	<header class="page-header">
+		<div class="kicker">Workshop · 01</div>
+		<h1>Konstruktion <strong>erleben.</strong></h1>
+		<p class="lede">Aus einzelnen Streben entsteht Schritt für Schritt eine stabile Konstruktion — gemeinsam, mit den eigenen Händen.</p>
+	</header>
+
+	<section class="ke-hero">
+		<img src={`${root}/images/preview/hero-bauen.jpg`} alt="Hände, die zusammen ein Geodome unter Baumkronen bauen" />
+	</section>
+
+	<section class="ke-body">
+		<div class="ke-text">
+			<p class="ke-lead">Aus einzelnen Streben entsteht Schritt für Schritt eine stabile Konstruktion, bei der du praktische Erfahrungen mit <strong>Material, Statik und handwerklichem Können</strong> sammelst.</p>
+			<p>Herausforderungen werden gemeinsam gelöst, Fortschritte gemeinsam gefeiert. Du brauchst kein Profi zu sein, um deinen eigenen Dome zu bauen.</p>
+			<p>So entsteht nicht nur ein beeindruckendes, vielseitiges und nachhaltiges Bauwerk — sondern auch ein <em>verbindendes Erlebnis.</em></p>
+		</div>
+		<aside class="ke-side">
+			<div class="ke-fact">
+				<div class="ke-fact-label">Material</div>
+				<div class="ke-fact-val">Holz · Schrauben · Winkel</div>
+			</div>
+			<div class="ke-fact">
+				<div class="ke-fact-label">Dauer</div>
+				<div class="ke-fact-val">4–8 Stunden</div>
+			</div>
+			<div class="ke-fact">
+				<div class="ke-fact-label">Gruppe</div>
+				<div class="ke-fact-val">4–12 Personen</div>
+			</div>
+			<div class="ke-fact">
+				<div class="ke-fact-label">Vorkenntnisse</div>
+				<div class="ke-fact-val">Keine</div>
+			</div>
+		</aside>
+	</section>
+
+	<section class="ke-gallery">
+		<img src={`${root}/images/preview/konstruktion-1.jpg`} alt="Beim Bauen" />
+		<img src={`${root}/images/preview/statik-aufbau.jpg`} alt="Aufrichten" />
+	</section>
+
+	<section class="ke-cta">
+		<h2>Klingt wie deins?</h2>
+		<p>Schreib mir — wir finden einen Termin, der für deine Gruppe oder deinen Ort passt.</p>
+		<a class="btn primary" href={`${root}/kontakt`}>Workshop anfragen</a>
+	</section>
+
+	<style>
+		.ke-hero { padding: 0 3rem 3rem; }
+		.ke-hero img { width: 100%; aspect-ratio: 16/9; object-fit: cover; }
+
+		.ke-body {
+			padding: 3rem 3rem 5rem;
+			display: grid; grid-template-columns: 1.6fr 1fr; gap: 4rem;
+			border-top: 1px solid var(--line);
+		}
+		.ke-text p { font-size: 1.05rem; line-height: 1.7; margin-bottom: 1rem; max-width: 36em; }
+		.ke-text .ke-lead { font-size: 1.3rem; line-height: 1.5; font-weight: 300; color: var(--ink); margin-bottom: 1.5rem; }
+		.ke-text em { font-style: italic; color: var(--green-deep); }
+		.ke-text strong { font-weight: 600; }
+
+		.ke-side { display: flex; flex-direction: column; gap: 1.5rem; padding-top: 0.5rem; }
+		.ke-fact { padding: 1rem 0; border-bottom: 1px solid rgba(26,26,26,0.15); }
+		.ke-fact-label { font-size: 0.7rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--green-deep); font-weight: 700; margin-bottom: 0.4rem; }
+		.ke-fact-val { font-size: 1.05rem; font-weight: 500; }
+
+		.ke-gallery {
+			padding: 0 3rem 5rem;
+			display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem;
+		}
+		.ke-gallery img { width: 100%; aspect-ratio: 4/3; object-fit: cover; }
+
+		.ke-cta {
+			padding: 5rem 3rem;
+			text-align: center;
+			background: var(--surface);
+			border-top: 1px solid var(--line);
+			border-bottom: 1px solid var(--line);
+		}
+		.ke-cta h2 { font-size: clamp(1.75rem, 3.5vw, 2.5rem); font-weight: 300; margin-bottom: 1rem; }
+		.ke-cta p { color: var(--muted); margin-bottom: 2rem; max-width: 32em; margin-left: auto; margin-right: auto; }
+
+		@media (max-width: 900px) {
+			.ke-hero, .ke-gallery { padding-left: 1.5rem; padding-right: 1.5rem; }
+			.ke-body { grid-template-columns: 1fr; padding: 2.5rem 1.5rem; gap: 2rem; }
+			.ke-gallery { grid-template-columns: 1fr; }
+			.ke-cta { padding: 3rem 1.5rem; }
+		}
+	</style>
+</VariantB>

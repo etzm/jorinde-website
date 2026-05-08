@@ -1,0 +1,76 @@
+---
+import VariantB from "../layouts/VariantB.astro";
+const root = import.meta.env.BASE_URL.replace(/\/$/, "");
+---
+<VariantB title="Statik & Raumwirkung — GardenGeoDome" activeNav="workshops">
+	<header class="page-header">
+		<div class="kicker">Workshop · 02</div>
+		<h1>Statik &<br /><strong>Raumwirkung.</strong></h1>
+		<p class="lede">Aus Leisten, Schrauben und Winkeln entsteht ein selber gebauter Raum.</p>
+	</header>
+
+	<section class="st-hero">
+		<img src={`${root}/images/preview/principle-dome-lake.jpg`} alt="Geodome am See — Triangulation als Rahmen, Blick auf Wasser und Himmel" />
+	</section>
+
+	<section class="st-body">
+		<div class="st-text">
+			<p class="st-lead">Die besondere <strong>Dreiecksstruktur verteilt Kräfte gleichmäßig</strong> über die gesamte Oberfläche — ein Prinzip, das Geodome große Stabilität bei geringem Materialeinsatz verleiht.</p>
+			<p>Die ruhige, lichtdurchflutete und zugleich abgeschirmte Atmosphäre schafft gute Bedingungen für Erholung und sorgt für ein Gefühl von <em>Geborgenheit und Weite zugleich.</em></p>
+		</div>
+		<aside class="st-side">
+			<div class="st-fact">
+				<div class="st-fact-label">Prinzip</div>
+				<div class="st-fact-val">Triangulation</div>
+			</div>
+			<div class="st-fact">
+				<div class="st-fact-label">Verhalten</div>
+				<div class="st-fact-val">Kräfteverteilung</div>
+			</div>
+			<div class="st-fact">
+				<div class="st-fact-label">Resultat</div>
+				<div class="st-fact-val">Stabilität · Geborgenheit</div>
+			</div>
+		</aside>
+	</section>
+
+	<section class="st-gallery">
+		<img src={`${root}/images/preview/statik-1.jpg`} alt="Triangulierter Holzrahmen mit Blattwerk" />
+		<img src={`${root}/images/preview/statik-bambus.jpg`} alt="Bambus-Geodome im Park" />
+	</section>
+
+	<section class="st-cta">
+		<h2>Selber spüren, wie das Prinzip wirkt.</h2>
+		<p>Im Workshop bauen wir gemeinsam — und du erlebst, warum die Form trägt.</p>
+		<a class="btn primary" href={`${root}/kontakt`}>Workshop anfragen</a>
+	</section>
+
+	<style>
+		.st-hero { padding: 0 3rem 3rem; }
+		.st-hero img { width: 100%; aspect-ratio: 16/9; object-fit: cover; }
+		.st-body {
+			padding: 3rem 3rem 5rem;
+			display: grid; grid-template-columns: 1.6fr 1fr; gap: 4rem;
+			border-top: 1px solid var(--line);
+		}
+		.st-text p { font-size: 1.05rem; line-height: 1.7; margin-bottom: 1rem; max-width: 36em; }
+		.st-text .st-lead { font-size: 1.3rem; line-height: 1.5; font-weight: 300; margin-bottom: 1.5rem; }
+		.st-text em { font-style: italic; color: var(--green-deep); }
+		.st-text strong { font-weight: 600; }
+		.st-side { display: flex; flex-direction: column; gap: 1rem; padding-top: 0.5rem; }
+		.st-fact { padding: 1rem 0; border-bottom: 1px solid rgba(26,26,26,0.15); }
+		.st-fact-label { font-size: 0.7rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--green-deep); font-weight: 700; margin-bottom: 0.4rem; }
+		.st-fact-val { font-size: 1.05rem; font-weight: 500; }
+		.st-gallery { padding: 0 3rem 5rem; display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+		.st-gallery img { width: 100%; aspect-ratio: 4/3; object-fit: cover; }
+		.st-cta { padding: 5rem 3rem; text-align: center; background: var(--surface); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+		.st-cta h2 { font-size: clamp(1.75rem, 3.5vw, 2.5rem); font-weight: 300; margin-bottom: 1rem; }
+		.st-cta p { color: var(--muted); margin-bottom: 2rem; max-width: 32em; margin-left: auto; margin-right: auto; }
+		@media (max-width: 900px) {
+			.st-hero, .st-gallery { padding-left: 1.5rem; padding-right: 1.5rem; }
+			.st-body { grid-template-columns: 1fr; padding: 2.5rem 1.5rem; gap: 2rem; }
+			.st-gallery { grid-template-columns: 1fr; }
+			.st-cta { padding: 3rem 1.5rem; }
+		}
+	</style>
+</VariantB>

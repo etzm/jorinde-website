@@ -1,0 +1,76 @@
+---
+import VariantB from "../layouts/VariantB.astro";
+const root = import.meta.env.BASE_URL.replace(/\/$/, "");
+
+const bereiche = [
+	{
+		title: "Begegnungsort",
+		text: "Ein Ort, in dem Begegnung im Mittelpunkt steht — z.B. für Kunst, Ausstellungen und Konzerte.",
+		img: `${root}/images/preview/anwendung-bunt.jpg`,
+	},
+	{
+		title: "Rückzug im Garten",
+		text: "Ein besonderer Rückzugsort im Garten — kreisrund, lichtdurchflutet, geschützt.",
+		img: `${root}/images/preview/anwendung-rueckzug.jpg`,
+	},
+	{
+		title: "Gewächshaus oder Wohnform",
+		text: "Als Gewächshaus oder auch als experimentelle Wohnform — ein Ort einfach zum Sein.",
+		img: `${root}/images/preview/anwendung-sandkasten.jpg`,
+	},
+];
+---
+<VariantB title="Anwendungsbereiche — GardenGeoDome" activeNav="workshops">
+	<header class="page-header">
+		<div class="kicker">Workshop · 03</div>
+		<h1>Was du daraus<br /><strong>machst.</strong></h1>
+		<p class="lede">Es gibt unzählige Anwendungsmöglichkeiten — ein Geodome passt sich deinen Ideen an. Er ist das, was du daraus machst.</p>
+	</header>
+
+	<section class="ab-grid">
+		{bereiche.map((b, i) => (
+			<article class={`ab-card ${i % 2 === 0 ? "ab-left" : "ab-right"}`}>
+				<div class="ab-img"><img src={b.img} alt={b.title} /></div>
+				<div class="ab-copy">
+					<h3>{b.title}</h3>
+					<p>{b.text}</p>
+				</div>
+			</article>
+		))}
+	</section>
+
+	<section class="ab-quote">
+		<p><em>Ein Ort einfach zum Sein.</em></p>
+	</section>
+
+	<section class="ab-cta">
+		<h2>Für deine Idee gemacht.</h2>
+		<p>Erzähl mir, was du brauchst — wir finden eine Form, die zu deinem Ort passt.</p>
+		<a class="btn primary" href={`${root}/kontakt`}>Workshop anfragen</a>
+	</section>
+
+	<style>
+		.ab-grid { padding: 3rem 3rem 5rem; display: flex; flex-direction: column; gap: 5rem; border-top: 1px solid var(--line); }
+		.ab-card { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center; }
+		.ab-card.ab-right { direction: rtl; }
+		.ab-card.ab-right > * { direction: ltr; }
+		.ab-img { aspect-ratio: 4/3; overflow: hidden; }
+		.ab-img img { width: 100%; height: 100%; object-fit: cover; }
+		.ab-copy h3 { font-size: clamp(1.5rem, 3vw, 2.25rem); font-weight: 300; margin-bottom: 1rem; }
+		.ab-copy p { font-size: 1.1rem; line-height: 1.6; color: var(--muted); max-width: 28em; }
+
+		.ab-quote { padding: 4rem 3rem; text-align: center; }
+		.ab-quote p { font-size: clamp(1.5rem, 3vw, 2.25rem); font-weight: 300; font-style: italic; color: var(--green-deep); }
+
+		.ab-cta { padding: 5rem 3rem; text-align: center; background: var(--surface); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+		.ab-cta h2 { font-size: clamp(1.75rem, 3.5vw, 2.5rem); font-weight: 300; margin-bottom: 1rem; }
+		.ab-cta p { color: var(--muted); margin-bottom: 2rem; max-width: 32em; margin-left: auto; margin-right: auto; }
+
+		@media (max-width: 900px) {
+			.ab-grid { padding: 2.5rem 1.5rem; gap: 3rem; }
+			.ab-card, .ab-card.ab-right { grid-template-columns: 1fr; gap: 1.25rem; direction: ltr; }
+			.ab-cta { padding: 3rem 1.5rem; }
+			.ab-quote { padding: 2.5rem 1.5rem; }
+		}
+	</style>
+</VariantB>

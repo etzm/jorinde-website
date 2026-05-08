@@ -22,3 +22,6 @@ pnpm-debug.log*
 
 # jetbrains setting folder
 .idea/
+
+# Source images (working folder, not deployed — copy curated subset to public/images/)
+Bilder_Website/
