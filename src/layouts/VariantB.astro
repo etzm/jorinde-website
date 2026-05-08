@@ -1,5 +1,6 @@
 ---
 import BrandMark from "../components/BrandMark.astro";
+import "@fontsource-variable/manrope";
 
 interface Props {
 	title: string;
@@ -25,9 +26,6 @@ const nav = [
 		<meta name="description" content={description} />
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href={`${root}/favicon.svg`} />
-		<link rel="preconnect" href="https://fonts.googleapis.com" />
-		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-		<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
 		<style is:global>
 			:root {
 				--bg: #eef1e6;
@@ -44,7 +42,7 @@ const nav = [
 			html, body {
 				background: var(--bg);
 				color: var(--ink);
-				font-family: "Manrope", system-ui, sans-serif;
+				font-family: "Manrope Variable", "Manrope", system-ui, sans-serif;
 				line-height: 1.5;
 				-webkit-font-smoothing: antialiased;
 			}
