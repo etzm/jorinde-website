@@ -16,60 +16,88 @@ const root = import.meta.env.BASE_URL.replace(/\/$/, "");
 				<span class="bk-step-num">01</span>
 				<h2>Welcher Workshop?</h2>
 			</div>
-			<p class="bk-options-tip"><strong>Tipp:</strong> Je mehr Teilnehmer:innen, desto stimmiger das Erlebnis — Geodome-Bauen lebt von vielen Händen und Kooperation.</p>
+			<p class="bk-options-hint">Wähle eine Option — klick auf eine Karte, um die Details und das Formular zu öffnen.</p>
 			<div class="bk-options">
 				<label class="bk-option">
 					<input type="radio" name="workshop" value="3-Stunden-Workshop (140 EUR)" checked />
 					<div class="bk-opt-card">
-						<div class="bk-opt-tag">3-Stunden-Workshop</div>
-						<div class="bk-opt-price"><strong>140 €</strong><span>zzgl. Anreise außerhalb Freiburgs (&gt;30 km)</span></div>
-						<p class="bk-opt-lead">Ein praxisnaher Einstieg in den Geodome-Bau — verständlich, kreativ, gemeinschaftlich.</p>
-						<ul>
-							<li>Dauer: ca. 3 Stunden</li>
-							<li>Gruppengröße: flexibel</li>
-							<li>Material inklusive</li>
-							<li>Für Schul- und Projektgruppen, als Team-Event, auch für Einzelpersonen</li>
-						</ul>
+						<div class="bk-opt-header">
+							<div class="bk-opt-header-text">
+								<span class="bk-opt-tag">3-Stunden-Workshop</span>
+							</div>
+							<span class="bk-opt-chevron" aria-hidden="true"></span>
+						</div>
+						<div class="bk-opt-body">
+							<p class="bk-opt-lead">Ein praxisnaher Einstieg in den Geodome-Bau — verständlich, kreativ, gemeinschaftlich.</p>
+							<ul>
+								<li>Dauer: ca. 3 Stunden</li>
+								<li>Gruppengröße: flexibel</li>
+								<li>Material inklusive</li>
+								<li>Für Schul- und Projektgruppen, als Team-Event, auch für Einzelpersonen</li>
+								<li class="bk-opt-price-li"><strong>Preis:</strong> 140 € zzgl. Anreise außerhalb Freiburgs (&gt;30 km)</li>
+							</ul>
+						</div>
 					</div>
 				</label>
 
 				<label class="bk-option">
 					<input type="radio" name="workshop" value="Ganztaegiger Workshop (480 EUR)" />
 					<div class="bk-opt-card">
-						<div class="bk-opt-tag">Ganztägiger Workshop</div>
-						<div class="bk-opt-price"><strong>480 €</strong><span>zzgl. Material</span></div>
-						<p class="bk-opt-lead">Gemeinschaftlich. Kreativ. Nachhaltig.</p>
-						<ul>
-							<li>Dauer: ca. 6–8 Stunden</li>
-							<li>Gruppengröße: flexibel</li>
-							<li>Material: <em>recycelt</em> oder <em>neu</em></li>
-							<li>Fertiger Geodome zum Mitnehmen</li>
-							<li>Verbindet gemeinschaftliches Gestalten mit handwerklicher Erfahrung und spielerischer Strukturfindung.</li>
-						</ul>
+						<div class="bk-opt-header">
+							<div class="bk-opt-header-text">
+								<span class="bk-opt-tag">Ganztägiger Workshop</span>
+							</div>
+							<span class="bk-opt-chevron" aria-hidden="true"></span>
+						</div>
+						<div class="bk-opt-body">
+							<p class="bk-opt-lead">Gemeinschaftlich. Kreativ. Nachhaltig.</p>
+							<ul>
+								<li>Dauer: ca. 6–8 Stunden</li>
+								<li>Gruppengröße: flexibel</li>
+								<li>Material: <em>recycelt</em> oder <em>neu</em></li>
+								<li>Fertiger Geodome zum Mitnehmen</li>
+								<li>Verbindet gemeinschaftliches Gestalten mit handwerklicher Erfahrung und spielerischer Strukturfindung.</li>
+								<li class="bk-opt-price-li"><strong>Preis:</strong> 480 € zzgl. Material</li>
+							</ul>
+						</div>
 					</div>
 				</label>
 
 				<label class="bk-option bk-option-custom">
 					<input type="radio" name="workshop" value="Individuell angepasst (Preis auf Anfrage)" />
 					<div class="bk-opt-card">
-						<div class="bk-opt-tag">Individuell angepasst</div>
-						<div class="bk-opt-price"><strong>auf Anfrage</strong><span>Preis nach Format &amp; Material</span></div>
-						<p class="bk-opt-lead">Für pädagogische Einrichtungen, Vereine, Unternehmen, Festivals und weitere Gemeinschaftsprojekte. Vom ersten Entwurf bis zur fertigen Kuppel — ein Projekt, das verbindet.</p>
-						<ul>
-							<li>Vom kompakten Workshop bis hin zu Tagesformaten oder Projektwochen</li>
-							<li>Gruppengröße: flexibel</li>
-							<li>Material: <em>recycelt</em> oder <em>neu</em></li>
-							<li>Fertiger Geodome zum Mitnehmen</li>
-							<li>Verbindet gemeinschaftliches Gestalten mit handwerklicher Erfahrung und spielerischer Strukturfindung.</li>
-						</ul>
+						<div class="bk-opt-header">
+							<div class="bk-opt-header-text">
+								<span class="bk-opt-tag">Individuell angepasst</span>
+							</div>
+							<span class="bk-opt-chevron" aria-hidden="true"></span>
+						</div>
+						<div class="bk-opt-body">
+							<p class="bk-opt-lead">Für pädagogische Einrichtungen, Vereine, Unternehmen, Festivals und weitere Gemeinschaftsprojekte. Vom ersten Entwurf bis zur fertigen Kuppel — ein Projekt, das verbindet.</p>
+							<ul>
+								<li>Vom kompakten Workshop bis hin zu Tagesformaten oder Projektwochen</li>
+								<li>Gruppengröße: flexibel</li>
+								<li>Material: <em>recycelt</em> oder <em>neu</em></li>
+								<li>Fertiger Geodome zum Mitnehmen</li>
+								<li>Verbindet gemeinschaftliches Gestalten mit handwerklicher Erfahrung und spielerischer Strukturfindung.</li>
+								<li class="bk-opt-price-li"><strong>Preis:</strong> auf Anfrage — nach Format &amp; Material</li>
+							</ul>
+						</div>
 					</div>
 				</label>
 
 				<label class="bk-option bk-option-question">
 					<input type="radio" name="workshop" value="Frage / Allgemeine Anfrage" />
 					<div class="bk-opt-card">
-						<div class="bk-opt-tag">Frage · Allgemeine Anfrage</div>
-						<p class="bk-opt-lead">Du bist noch nicht bereit zu buchen? Stell einfach eine Frage — zu Workshops, Projekten, Materialien, Kooperationen oder allem anderen. Datum und Gruppengröße kannst du dann überspringen.</p>
+						<div class="bk-opt-header">
+							<div class="bk-opt-header-text">
+								<span class="bk-opt-tag">Frage · Allgemeine Anfrage</span>
+							</div>
+							<span class="bk-opt-chevron" aria-hidden="true"></span>
+						</div>
+						<div class="bk-opt-body">
+							<p class="bk-opt-lead">Du bist noch nicht bereit zu buchen? Stell einfach eine Frage — zu Workshops, Projekten, Materialien, Kooperationen oder allem anderen. Datum und Gruppengröße kannst du dann überspringen.</p>
+						</div>
 					</div>
 				</label>
 			</div>
@@ -85,7 +113,7 @@ const root = import.meta.env.BASE_URL.replace(/\/$/, "");
 			<div class="bk-grid-2">
 				<div class="bk-field">
 					<label for="datum">Datum</label>
-					<input type="date" id="datum" name="datum" required />
+					<input type="date" id="datum" name="datum" />
 				</div>
 				<div class="bk-field">
 					<label for="alternativ">Alternative (optional)</label>
@@ -103,11 +131,11 @@ const root = import.meta.env.BASE_URL.replace(/\/$/, "");
 			<div class="bk-grid-2">
 				<div class="bk-field">
 					<label for="personen">Anzahl Personen</label>
-					<input type="number" id="personen" name="personen" min="1" max="20" placeholder="z.B. 6" required />
+					<input type="number" id="personen" name="personen" min="1" max="20" placeholder="z.B. 6" />
 				</div>
 				<div class="bk-field">
 					<label for="ort">Ort / PLZ</label>
-					<input type="text" id="ort" name="ort" placeholder="z.B. Freiburg, 79100 — oder bei mir in Freiburg" required />
+					<input type="text" id="ort" name="ort" placeholder="z.B. Freiburg, 79100 — oder bei mir in Freiburg" />
 				</div>
 			</div>
 		</section>
@@ -121,11 +149,11 @@ const root = import.meta.env.BASE_URL.replace(/\/$/, "");
 			<div class="bk-grid-2">
 				<div class="bk-field">
 					<label for="name">Name</label>
-					<input type="text" id="name" name="name" required autocomplete="name" />
+					<input type="text" id="name" name="name" autocomplete="name" />
 				</div>
 				<div class="bk-field">
 					<label for="email">E-Mail</label>
-					<input type="email" id="email" name="email" required autocomplete="email" />
+					<input type="email" id="email" name="email" autocomplete="email" />
 				</div>
 			</div>
 			<div class="bk-field">
@@ -153,15 +181,15 @@ const root = import.meta.env.BASE_URL.replace(/\/$/, "");
 				<input type="checkbox" name="newsletter" />
 				<span>Ja, ich möchte gelegentlich Updates zu Workshop-Terminen und Projekten erhalten (Newsletter, Abmelden jederzeit per E-Mail).</span>
 			</label>
-			<label class="bk-consent">
+			<label class="bk-consent bk-consent-required">
 				<input type="checkbox" name="consent" required />
-				<span>Ich willige ein, dass meine angegebenen Daten (Name, E-Mail, Telefon, Anfrage-Details) zur Bearbeitung meiner Anfrage verarbeitet werden. Die Daten werden nicht an Dritte weitergegeben und spätestens 6 Monate nach Abschluss der Anfrage gelöscht. Ich kann meine Einwilligung jederzeit per E-Mail an <a href="mailto:info@gardengeodome.com">info@gardengeodome.com</a> widerrufen. Mehr in der <a href={`${root}/datenschutz`}>Datenschutzerklärung</a>.</span>
+				<span>Ich willige ein, dass meine angegebenen Daten (Name, E-Mail, Telefon, Anfrage-Details) zur Bearbeitung meiner Anfrage verarbeitet werden. Die Daten werden nicht an Dritte weitergegeben und spätestens 6 Monate nach Abschluss der Anfrage gelöscht. Ich kann meine Einwilligung jederzeit per E-Mail an <a href="mailto:info@gardengeodome.com">info@gardengeodome.com</a> widerrufen. Mehr in der <a href={`${root}/datenschutz`}>Datenschutzerklärung</a>. <strong>(Pflichtfeld)</strong></span>
 			</label>
 		</div>
 
 		<div class="bk-submit">
 			<button type="submit" class="btn primary bk-submit-btn">Anfrage absenden</button>
-			<p class="bk-form-hint">Öffnet dein E-Mail-Programm. Es ist eine <em>Anfrage</em> — die Buchung wird erst nach unserer Rücksprache verbindlich. Falls du keinen E-Mail-Client hast, schreib direkt an <a href="mailto:info@gardengeodome.com">info@gardengeodome.com</a>.</p>
+			<p class="bk-form-hint">Alle Felder sind freiwillig — bis auf die Einwilligung zur Datenverarbeitung. Öffnet dein E-Mail-Programm — fülle einfach das aus, was du teilen möchtest. Es ist eine <em>Anfrage</em> — die Buchung wird erst nach unserer Rücksprache verbindlich. Falls du keinen E-Mail-Client hast, schreib direkt an <a href="mailto:info@gardengeodome.com">info@gardengeodome.com</a>.</p>
 		</div>
 	</form>
 
@@ -187,16 +215,11 @@ const root = import.meta.env.BASE_URL.replace(/\/$/, "");
 			const form = document.getElementById("buchung-form");
 			if (!form) return;
 			const submitBtn = form.querySelector(".bk-submit-btn");
-			const bookingFields = ["datum", "personen", "ort"];
 
 			function applyMode() {
 				const checked = form.querySelector('input[name="workshop"]:checked');
 				const isFrage = checked && checked.value.startsWith("Frage");
 				form.classList.toggle("is-question-mode", isFrage);
-				bookingFields.forEach((name) => {
-					const el = form[name];
-					if (el) el.required = !isFrage;
-				});
 				if (submitBtn) submitBtn.textContent = isFrage ? "Frage senden" : "Anfrage absenden";
 			}
 
@@ -209,59 +232,91 @@ const root = import.meta.env.BASE_URL.replace(/\/$/, "");
 		(function () {
 			const form = document.getElementById("buchung-form");
 			if (!form) return;
+			const consentLabel = form.querySelector(".bk-consent-required");
+			const consentInput = form.querySelector('input[name="consent"]');
+
+			// Clear the highlight as soon as the user ticks the box.
+			if (consentInput && consentLabel) {
+				consentInput.addEventListener("change", function () {
+					if (consentInput.checked) consentLabel.classList.remove("bk-consent-error");
+				});
+			}
+
 			form.addEventListener("submit", function (e) {
 				e.preventDefault();
-				if (!form.checkValidity()) { form.reportValidity(); return; }
 				if (form._gotcha && form._gotcha.value) return;
+
+				// Consent is required. Highlight and scroll if missing.
+				if (consentInput && !consentInput.checked) {
+					if (consentLabel) {
+						consentLabel.classList.add("bk-consent-error");
+						consentLabel.scrollIntoView({ behavior: "smooth", block: "center" });
+					}
+					return;
+				}
+
 				const data = new FormData(form);
 				const get = (k) => (data.get(k) || "").toString().trim();
 				const isFrage = get("workshop").startsWith("Frage");
 				const newsletter = data.get("newsletter") ? "ja" : "nein";
+				const consent = data.get("consent") ? "ja" : "—";
 
+				// Newsletter opt-in: silently submit email to Brevo so it ends up
+				// in the list. Brevo's double-opt-in confirmation email handles
+				// the DSGVO step (subscriber must click the link).
+				if (data.get("newsletter") && get("email")) {
+					const fd = new FormData();
+					fd.append("EMAIL", get("email"));
+					fd.append("locale", "de");
+					fd.append("html_type", "simple");
+					fetch("https://c0686c74.sibforms.com/serve/MUIFAP1NVvsyYlIzlwJoK1hgc3fa6gWNFXPTV116Dp7XCVIobLWWn62E4RD4LNLcNeKnZKjKlurblEQKXwwTzrYwHwPx-aP_K7NE_DQFAiS8wnn7lNwl5rKHdOBVkUGPbnFNcQko2No5T3kD8Z_2zHJwxHMJzVF8rwj7xIhPd4CrXw77eUL4LXEQbqQ1_KNI2FnensZ6ZSQxiTFn1w==", {
+						method: "POST",
+						body: fd,
+						mode: "no-cors",
+					}).catch(function () {});
+				}
+
+				const nameOrAnon = get("name") || "(ohne Name)";
 				const lines = isFrage
 					? [
-						"Allgemeine Anfrage von " + get("name"),
+						"Allgemeine Anfrage von " + nameOrAnon,
 						"",
 						"Anliegen:    " + get("workshop"),
 						"",
 						"Kontakt:",
-						"  Name:    " + get("name"),
-						"  E-Mail:  " + get("email"),
+						"  Name:    " + (get("name") || "—"),
+						"  E-Mail:  " + (get("email") || "—"),
 						"  Telefon: " + (get("telefon") || "—"),
 						"",
 						"Nachricht:",
 						(get("msg") || "—"),
 						"",
-						"Newsletter: " + newsletter,
-						"",
-						"---",
-						"Einwilligung zur Datenverarbeitung erteilt.",
+						"Newsletter:  " + newsletter,
+						"Einwilligung: " + consent,
 					].join("\n")
 					: [
-						"Workshop-Buchungsanfrage von " + get("name"),
+						"Workshop-Buchungsanfrage von " + nameOrAnon,
 						"",
 						"Workshop:    " + get("workshop"),
-						"Datum:       " + get("datum"),
+						"Datum:       " + (get("datum") || "—"),
 						"Alternative: " + (get("alternativ") || "—"),
-						"Personen:    " + get("personen"),
-						"Ort / PLZ:   " + get("ort"),
+						"Personen:    " + (get("personen") || "—"),
+						"Ort / PLZ:   " + (get("ort") || "—"),
 						"",
 						"Kontakt:",
-						"  Name:    " + get("name"),
-						"  E-Mail:  " + get("email"),
+						"  Name:    " + (get("name") || "—"),
+						"  E-Mail:  " + (get("email") || "—"),
 						"  Telefon: " + (get("telefon") || "—"),
 						"",
 						"Nachricht:",
 						(get("msg") || "—"),
 						"",
-						"Newsletter: " + newsletter,
-						"",
-						"---",
-						"Einwilligung zur Datenverarbeitung erteilt.",
+						"Newsletter:  " + newsletter,
+						"Einwilligung: " + consent,
 					].join("\n");
 
 				const subjectPrefix = isFrage ? "Anfrage von " : "Workshop-Buchungsanfrage von ";
-				const subject = encodeURIComponent(subjectPrefix + get("name"));
+				const subject = encodeURIComponent(subjectPrefix + nameOrAnon);
 				const body = encodeURIComponent(lines);
 				window.location.href = "mailto:info@gardengeodome.com?subject=" + subject + "&body=" + body;
 			});
@@ -305,52 +360,22 @@ const root = import.meta.env.BASE_URL.replace(/\/$/, "");
 			font-size: 0.95rem;
 		}
 
-		.bk-options-tip {
-			margin: 0 0 1.5rem;
-			padding: 0.85rem 1.1rem;
-			border-left: 3px solid var(--green-deep);
-			background: var(--surface);
-			color: var(--ink);
+		.bk-options-hint {
+			margin: 0 0 1.25rem;
 			font-size: 0.92rem;
-			line-height: 1.5;
-			max-width: 60em;
+			color: var(--muted);
 		}
-		.bk-options-tip strong { color: var(--green-deep); font-weight: 700; }
 
-		/* Workshop options */
+		/* Workshop options — compact rows; expand body when checked. */
 		.bk-options {
-			display: grid;
-			grid-template-columns: repeat(3, 1fr);
-			gap: 1.25rem;
+			display: flex;
+			flex-direction: column;
+			gap: 0.6rem;
 			margin-top: 0.5rem;
 		}
-		.bk-option-custom .bk-opt-card {
-			border-style: dashed;
-			background: var(--surface);
-		}
-		.bk-option-question {
-			grid-column: 1 / -1;
-			margin-top: 0.25rem;
-		}
-		.bk-option-question .bk-opt-card {
-			border-style: dashed;
-			background: transparent;
-			padding: 1.25rem 1.5rem;
-		}
-		.bk-option-question .bk-opt-lead {
-			margin-bottom: 0;
-		}
-		.is-question-mode .bk-step-booking {
-			display: none;
-		}
-		.bk-newsletter-opt span {
-			color: var(--ink) !important;
-		}
-		@media (max-width: 1100px) {
-			.bk-options { grid-template-columns: 1fr 1fr; }
-			.bk-option-custom { grid-column: 1 / -1; }
-			.bk-option-custom .bk-opt-card { border-style: dashed; }
-		}
+		.is-question-mode .bk-step-booking { display: none; }
+		.bk-newsletter-opt span { color: var(--ink) !important; }
+
 		.bk-option {
 			cursor: pointer;
 			display: block;
@@ -362,52 +387,85 @@ const root = import.meta.env.BASE_URL.replace(/\/$/, "");
 			pointer-events: none;
 		}
 		.bk-opt-card {
-			border: 2px solid var(--line);
-			padding: 1.75rem 1.5rem;
+			border: 1.5px solid rgba(26,26,26,0.18);
+			border-radius: 6px;
 			background: var(--bg);
+			overflow: hidden;
 			transition: border-color 150ms, background 150ms, box-shadow 150ms;
-			height: 100%;
 		}
-		.bk-option:hover .bk-opt-card { background: var(--surface); }
-		.bk-option input[type="radio"]:checked ~ .bk-opt-card,
+		.bk-option:hover .bk-opt-card { border-color: var(--green-deep); background: var(--surface); }
 		.bk-option:has(input[type="radio"]:checked) .bk-opt-card {
 			border-color: var(--green-deep);
 			background: var(--surface);
-			box-shadow: inset 0 0 0 1px var(--green-deep);
+			box-shadow: 0 1px 6px rgba(45,74,43,0.08);
+		}
+		.bk-option-custom .bk-opt-card,
+		.bk-option-question .bk-opt-card {
+			border-style: dashed;
+		}
+
+		/* Header — always visible. */
+		.bk-opt-header {
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+			gap: 1rem;
+			padding: 0.95rem 1.15rem;
+		}
+		.bk-opt-header-text {
+			display: flex;
+			align-items: baseline;
+			gap: 0.9rem;
+			flex-wrap: wrap;
+			min-width: 0;
 		}
 		.bk-opt-tag {
-			font-size: 0.72rem; letter-spacing: 0.18em; text-transform: uppercase;
-			color: var(--green-deep); font-weight: 700;
-			margin-bottom: 0.85rem;
-		}
-		.bk-opt-price {
-			display: flex; align-items: baseline; gap: 0.85rem;
-			margin-bottom: 1rem; flex-wrap: wrap;
-		}
-		.bk-opt-price strong {
-			font-family: "Fraunces Variable", "Fraunces", Georgia, serif;
-			font-size: clamp(1.75rem, 3vw, 2.25rem);
-			font-weight: 600;
-			font-variation-settings: "SOFT" 80, "WONK" 1, "opsz" 144;
-			letter-spacing: -0.01em;
+			font-size: 0.92rem;
+			font-weight: 700;
 			color: var(--ink);
+			letter-spacing: -0.005em;
 		}
-		.bk-opt-price span {
-			font-size: 0.82rem;
-			color: var(--muted);
+		.bk-opt-chevron {
+			width: 12px; height: 12px;
+			border-right: 2px solid var(--green-deep);
+			border-bottom: 2px solid var(--green-deep);
+			transform: rotate(45deg);
+			transition: transform 200ms ease;
+			flex-shrink: 0;
+			margin-right: 0.25rem;
+		}
+		.bk-option:has(input[type="radio"]:checked) .bk-opt-chevron {
+			transform: rotate(-135deg);
+		}
+
+		/* Body — expanded only when option is selected. */
+		.bk-opt-body {
+			display: none;
+			padding: 0 1.15rem 1.15rem;
+			border-top: 1px solid rgba(45,74,43,0.18);
+			padding-top: 1rem;
+		}
+		.bk-option:has(input[type="radio"]:checked) .bk-opt-body {
+			display: block;
+			animation: bk-opt-slide-down 200ms ease-out;
+		}
+		@keyframes bk-opt-slide-down {
+			from { opacity: 0; transform: translateY(-4px); }
+			to   { opacity: 1; transform: translateY(0); }
 		}
 		.bk-opt-lead {
-			font-size: 1rem; line-height: 1.5;
-			margin-bottom: 1rem;
+			font-size: 0.98rem; line-height: 1.55;
+			margin-bottom: 0.85rem;
+			color: var(--ink);
 		}
 		.bk-option ul { list-style: none; padding: 0; }
 		.bk-option ul li {
-			font-size: 0.92rem;
+			font-size: 0.9rem;
 			color: var(--muted);
-			line-height: 1.5;
+			line-height: 1.55;
 			padding-left: 1.1rem;
 			position: relative;
-			margin-bottom: 0.45rem;
+			margin-bottom: 0.35rem;
 		}
 		.bk-option ul li::before {
 			content: "·";
@@ -417,6 +475,13 @@ const root = import.meta.env.BASE_URL.replace(/\/$/, "");
 			font-weight: 700;
 		}
 		.bk-option ul li em { font-style: italic; color: var(--ink); }
+		.bk-opt-price-li {
+			margin-top: 0.5rem !important;
+			padding-top: 0.5rem !important;
+			border-top: 1px dashed rgba(45,74,43,0.25);
+			color: var(--ink) !important;
+		}
+		.bk-opt-price-li strong { color: var(--green-deep); font-weight: 700; }
 
 		/* Form fields */
 		.bk-grid-2 {
@@ -490,6 +555,25 @@ const root = import.meta.env.BASE_URL.replace(/\/$/, "");
 			color: var(--muted);
 		}
 		.bk-consent a { color: var(--green-deep); border-bottom: 1px solid currentColor; }
+		.bk-consent-required strong { color: var(--green-deep); font-weight: 700; }
+
+		/* Highlight when consent is required but not ticked yet. */
+		.bk-consent-error {
+			padding: 0.75rem 1rem;
+			margin: -0.75rem -1rem;
+			border: 2px solid #c0392b;
+			border-radius: 4px;
+			background: #fff4f3;
+			animation: bk-consent-shake 0.4s ease-out;
+		}
+		.bk-consent-error span { color: #c0392b; }
+		.bk-consent-error a { color: #c0392b; }
+		.bk-consent-error input[type="checkbox"] { accent-color: #c0392b; }
+		@keyframes bk-consent-shake {
+			0%, 100% { transform: translateX(0); }
+			25% { transform: translateX(-6px); }
+			75% { transform: translateX(6px); }
+		}
 
 		/* Submit */
 		.bk-submit {

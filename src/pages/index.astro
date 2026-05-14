@@ -7,21 +7,21 @@ const workshops = [
 		num: "01",
 		title: "Konstruktion erleben",
 		text: "Aus einzelnen Streben entsteht Schritt für Schritt eine stabile Konstruktion — du sammelst praktische Erfahrungen mit Material, Statik und handwerklichem Können.",
-		img: `${root}/images/preview/konstruktion-1.jpg`,
+		img: `${root}/images/preview/konstruktion-1.webp`,
 		href: `${root}/konstruktion-erleben`,
 	},
 	{
 		num: "02",
 		title: "Statik & Raumwirkung",
 		text: "Aus Leisten, Schrauben und Winkeln entsteht ein selber gebauter Raum. Die Dreiecksstruktur verteilt Kräfte gleichmäßig — Stabilität bei minimalem Materialeinsatz.",
-		img: `${root}/images/preview/statik-1.jpg`,
+		img: `${root}/images/preview/statik-1.webp`,
 		href: `${root}/statik`,
 	},
 	{
 		num: "03",
 		title: "Anwendungsbereiche",
 		text: "Begegnungsort, Rückzug im Garten, Gewächshaus, experimentelle Wohnform. Ein Geodome passt sich deinen Ideen an — er ist das, was du daraus machst.",
-		img: `${root}/images/preview/anwendung-1.jpg`,
+		img: `${root}/images/preview/anwendung-1.webp`,
 		href: `${root}/anwendungsbereiche`,
 	},
 ];
@@ -38,7 +38,7 @@ const workshops = [
 			</div>
 		</div>
 		<div class="hero-visual">
-			<img src={`${root}/images/preview/hero-bauen-gruppe.jpg`} alt="Gruppe baut gemeinsam einen Geodome im Garten" />
+			<img src={`${root}/images/preview/hero-bauen-gruppe.webp`} alt="Gruppe baut gemeinsam einen Geodome im Garten" fetchpriority="high" decoding="async" />
 			<div class="ticks"></div>
 		</div>
 	</header>
@@ -56,7 +56,7 @@ const workshops = [
 			{workshops.map((w) => (
 				<a class="workshop" href={w.href}>
 					<div class="workshop-num">{w.num}<span class="tri"></span></div>
-					<img src={w.img} alt={w.title} />
+					<img src={w.img} alt={w.title} loading="lazy" decoding="async" />
 					<h3>{w.title}</h3>
 					<p>{w.text}</p>
 					<span class="more">Mehr →</span>
@@ -67,7 +67,7 @@ const workshops = [
 
 	<section class="principle" id="prinzip">
 		<div class="principle-img">
-			<img src={`${root}/images/preview/principle-dome-lake.jpg`} alt="Geodome am See — Triangulation als Rahmen, Blick auf Wasser und Himmel" />
+			<img src={`${root}/images/preview/principle-dome-lake.webp`} alt="Geodome am See — Triangulation als Rahmen, Blick auf Wasser und Himmel" loading="lazy" decoding="async" />
 		</div>
 		<div>
 			<div class="kicker">Prinzip</div>
@@ -95,7 +95,7 @@ const workshops = [
 		}
 		.cta-row { display: flex; gap: 1rem; flex-wrap: wrap; }
 
-		.hero-visual { position: relative; aspect-ratio: 4 / 5; overflow: hidden; background: var(--bg); }
+		.hero-visual { position: relative; aspect-ratio: 4 / 5; max-height: 560px; overflow: hidden; background: var(--bg); }
 		.hero-visual img { width: 100%; height: 100%; object-fit: cover; }
 		.hero-visual .ticks { position: absolute; inset: 0; pointer-events: none; }
 		.hero-visual .ticks::before, .hero-visual .ticks::after {
@@ -145,7 +145,7 @@ const workshops = [
 			background: currentColor;
 			clip-path: polygon(50% 0, 100% 100%, 0 100%);
 		}
-		.workshop img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; }
+		.workshop img { width: 100%; aspect-ratio: 4 / 3; max-height: 280px; object-fit: cover; }
 		.workshop h3 { font-size: 1.2rem; font-weight: 600; }
 		.workshop p { font-size: 0.92rem; color: var(--muted); }
 		.workshop .more {
@@ -157,7 +157,7 @@ const workshops = [
 			padding: 6rem 3rem;
 			display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center;
 		}
-		.principle-img { aspect-ratio: 4 / 3; overflow: hidden; }
+		.principle-img { aspect-ratio: 4 / 3; max-height: 440px; overflow: hidden; }
 		.principle-img img { width: 100%; height: 100%; object-fit: cover; }
 		.principle h2 {
 			font-size: clamp(1.5rem, 3vw, 2.25rem);

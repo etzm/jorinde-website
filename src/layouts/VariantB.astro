@@ -46,6 +46,10 @@ const nav = [
 				line-height: 1.5;
 				-webkit-font-smoothing: antialiased;
 			}
+			body {
+				max-width: 1400px;
+				margin: 0 auto;
+			}
 			a { color: inherit; text-decoration: none; }
 			img { max-width: 100%; display: block; }
 			h1, h2, h3, h4 { letter-spacing: -0.02em; line-height: 1.1; font-weight: 300; }
@@ -171,18 +175,28 @@ const nav = [
 			}
 			.newsletter-form button:hover { background: white; }
 			.newsletter-consent {
-				display: flex; align-items: flex-start; gap: 0.6rem;
-				font-size: 0.78rem; color: rgba(238,241,230,0.78);
+				font-size: 0.78rem;
+				color: rgba(238,241,230,0.78);
 				line-height: 1.5;
-				cursor: pointer;
+				margin: 0;
+				max-width: 38em;
 			}
-			.newsletter-consent input[type="checkbox"] {
-				margin-top: 0.2rem;
-				accent-color: var(--bg);
-				flex-shrink: 0;
-			}
+			.newsletter-consent strong { color: var(--bg); font-weight: 600; }
 			.newsletter-consent a { color: var(--bg); border-bottom: 1px solid rgba(238,241,230,0.5); }
 			.newsletter-consent a:hover { border-bottom-color: var(--bg); }
+			.newsletter-success {
+				padding: 1rem 1.25rem;
+				border: 1px solid rgba(238,241,230,0.35);
+				border-radius: 4px;
+				max-width: 36em;
+			}
+			.newsletter-success p {
+				font-size: 0.95rem;
+				color: rgba(238,241,230,0.92);
+				line-height: 1.5;
+				margin: 0;
+			}
+			.newsletter-success strong { color: var(--bg); font-weight: 700; }
 			/* Honeypot — visually hidden but accessible to bots that fill all fields */
 			.hp-field {
 				position: absolute !important;
@@ -272,31 +286,47 @@ const nav = [
 				<div class="foot-newsletter">
 					<h3>Bleib in Kontakt.</h3>
 					<p>Erfahre als erstes von neuen Workshop-Terminen, Projekten und Wissen rund um den Geodome-Bau.</p>
-					<form id="newsletter-form" class="newsletter-form">
-						<input type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true" class="hp-field" />
+					<form id="newsletter-form" class="newsletter-form"
+						method="POST"
+						action="https://c0686c74.sibforms.com/serve/MUIFAP1NVvsyYlIzlwJoK1hgc3fa6gWNFXPTV116Dp7XCVIobLWWn62E4RD4LNLcNeKnZKjKlurblEQKXwwTzrYwHwPx-aP_K7NE_DQFAiS8wnn7lNwl5rKHdOBVkUGPbnFNcQko2No5T3kD8Z_2zHJwxHMJzVF8rwj7xIhPd4CrXw77eUL4LXEQbqQ1_KNI2FnensZ6ZSQxiTFn1w==">
+						<input type="text" name="email_address_check" value="" class="hp-field" tabindex="-1" autocomplete="off" aria-hidden="true" />
 						<div class="newsletter-row">
-							<input type="email" name="email" placeholder="deine@email.de" required aria-label="E-Mail-Adresse" autocomplete="email" />
+							<input type="email" name="EMAIL" placeholder="deine@email.de" required aria-label="E-Mail-Adresse" autocomplete="email" />
 							<button type="submit">Anmelden</button>
 						</div>
-						<label class="newsletter-consent">
-							<input type="checkbox" name="consent" required />
-							<span>Ich willige ein, dass meine E-Mail-Adresse zum Versand des Newsletters verwendet wird. Abmelden jederzeit per E-Mail. <a href={`${root}/datenschutz`}>Datenschutzerklärung</a>.</span>
-						</label>
+						<p class="newsletter-consent">
+							Mit der Anmeldung stimmst du zu, dass deine E-Mail-Adresse an unseren Newsletter-Anbieter <strong>Brevo</strong> (Sendinblue SAS, Frankreich) zur Verarbeitung übermittelt wird. Du erhältst eine Bestätigungs-E-Mail mit Link zur Anmeldung (Double-Opt-In). Abmelden jederzeit per Link im Newsletter. Mehr in der <a href={`${root}/datenschutz`}>Datenschutzerklärung</a>.
+						</p>
+						<input type="hidden" name="locale" value="de" />
+						<input type="hidden" name="html_type" value="simple" />
 					</form>
+					<div id="newsletter-success" class="newsletter-success" hidden>
+						<p><strong>Danke!</strong> Wir haben dir gerade eine Bestätigungs-E-Mail geschickt — bitte klicke darauf, um die Anmeldung abzuschließen.</p>
+					</div>
 					<script is:inline>
 						(function () {
 							const form = document.getElementById("newsletter-form");
-							if (!form) return;
+							const success = document.getElementById("newsletter-success");
+							if (!form || !success) return;
 							form.addEventListener("submit", function (e) {
 								e.preventDefault();
-								if (!form.checkValidity()) { form.reportValidity(); return; }
-								if (form._gotcha && form._gotcha.value) return; // honeypot
-								const email = form.email.value;
-								const body = encodeURIComponent(
-									"Newsletter-Anmeldung\n\nE-Mail: " + email +
-									"\n\n---\nEinwilligung zur Datenverarbeitung erteilt."
-								);
-								window.location.href = "mailto:info@gardengeodome.com?subject=Newsletter-Anmeldung&body=" + body;
+								// Honeypot: if a bot filled the hidden field, silently bail.
+								if (form.email_address_check && form.email_address_check.value) return;
+								const email = (form.EMAIL.value || "").trim();
+								if (!email) return;
+								const fd = new FormData();
+								fd.append("EMAIL", email);
+								fd.append("locale", "de");
+								fd.append("html_type", "simple");
+								fetch(form.action, {
+									method: "POST",
+									body: fd,
+									mode: "no-cors",
+								}).catch(function () {});
+								// Hide the form, show success. We can't read the no-cors
+								// response, but Brevo always sends the confirmation email.
+								form.hidden = true;
+								success.hidden = false;
 							});
 						})();
 					</script>

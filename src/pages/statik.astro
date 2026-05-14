@@ -10,7 +10,7 @@ const root = import.meta.env.BASE_URL.replace(/\/$/, "");
 	</header>
 
 	<section class="st-hero">
-		<img src={`${root}/images/preview/principle-dome-lake.jpg`} alt="Geodome am See — Triangulation als Rahmen, Blick auf Wasser und Himmel" />
+		<img src={`${root}/images/preview/principle-dome-lake.webp`} alt="Geodome am See — Triangulation als Rahmen, Blick auf Wasser und Himmel" fetchpriority="high" decoding="async" />
 	</section>
 
 	<section class="st-body">
@@ -35,8 +35,8 @@ const root = import.meta.env.BASE_URL.replace(/\/$/, "");
 	</section>
 
 	<section class="st-gallery">
-		<img src={`${root}/images/preview/statik-1.jpg`} alt="Triangulierter Holzrahmen mit Blattwerk" />
-		<img src={`${root}/images/preview/statik-bambus.jpg`} alt="Bambus-Geodome im Park" />
+		<img src={`${root}/images/preview/statik-1.webp`} alt="Triangulierter Holzrahmen mit Blattwerk" loading="lazy" decoding="async" />
+		<img src={`${root}/images/preview/statik-bambus.webp`} alt="Bambus-Geodome im Park" loading="lazy" decoding="async" />
 	</section>
 
 	<section class="st-cta">
@@ -47,7 +47,7 @@ const root = import.meta.env.BASE_URL.replace(/\/$/, "");
 
 	<style>
 		.st-hero { padding: 0 3rem 3rem; }
-		.st-hero img { width: 100%; aspect-ratio: 16/9; object-fit: cover; }
+		.st-hero img { width: 100%; aspect-ratio: 16/9; max-height: 480px; object-fit: cover; }
 		.st-body {
 			padding: 3rem 3rem 5rem;
 			display: grid; grid-template-columns: 1.6fr 1fr; gap: 4rem;
@@ -62,7 +62,7 @@ const root = import.meta.env.BASE_URL.replace(/\/$/, "");
 		.st-fact-label { font-size: 0.7rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--green-deep); font-weight: 700; margin-bottom: 0.4rem; }
 		.st-fact-val { font-size: 1.05rem; font-weight: 500; }
 		.st-gallery { padding: 0 3rem 5rem; display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
-		.st-gallery img { width: 100%; aspect-ratio: 4/3; object-fit: cover; }
+		.st-gallery img { width: 100%; aspect-ratio: 4/3; max-height: 320px; object-fit: cover; }
 		.st-cta { padding: 5rem 3rem; text-align: center; background: var(--surface); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
 		.st-cta h2 { font-size: clamp(1.75rem, 3.5vw, 2.5rem); font-weight: 300; margin-bottom: 1rem; }
 		.st-cta p { color: var(--muted); margin-bottom: 2rem; max-width: 32em; margin-left: auto; margin-right: auto; }
