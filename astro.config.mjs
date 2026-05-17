@@ -7,7 +7,6 @@ import { defineConfig } from 'astro/config';
 // https://astro.build/config
 export default defineConfig({
 	site: 'https://www.geodome-freiburg.de',
-	base: '/jorinde-website',
 	trailingSlash: 'ignore',
 	integrations: [mdx(), sitemap()],
 });
